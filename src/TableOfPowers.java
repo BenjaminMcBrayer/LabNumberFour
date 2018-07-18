@@ -1,5 +1,5 @@
 
-//Benjamin McBrayer (Pair programmer: Jill Xu)
+//Benjamin McBrayer (Pair programmer: J Xu)
 //This Java console program displays a table of powers.
 
 import java.util.Scanner;
@@ -31,7 +31,7 @@ public class TableOfPowers {
 
 			// Calculate and print numbers, squares, and cubes from 1 to the value entered.
 			for (i = 1; i <= userNum; ++i) {
-				System.out.printf("\n%1$-10s %2$-10s %3$-10s", i, (int) Math.pow(i, 2), (int) Math.pow(i, 3));
+				System.out.printf("\n%1$-10s %2$-10s %3$-10s", i, (long) Math.pow(i, 2), (long) Math.pow(i, 3));
 			}
 
 			// Ask if the user wants to continue entering numbers.
@@ -43,9 +43,8 @@ public class TableOfPowers {
 		} while (playAgain.equalsIgnoreCase("y"));
 
 		// End program officially if user enters anything other than "Y" or "y."
-		if (!playAgain.equalsIgnoreCase("y")) {
-			System.out.println("Goodbye, " + userInfo + "!");
-		}
+		System.out.println("Goodbye, " + userInfo + "!");
+
 
 		scnr.close();
 
