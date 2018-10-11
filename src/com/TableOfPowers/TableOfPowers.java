@@ -1,3 +1,4 @@
+package com.TableOfPowers;
 
 //Benjamin McBrayer (Pair programmer: J Xu)
 //This Java console program displays a table of powers.
@@ -18,14 +19,13 @@ public class TableOfPowers {
 		System.out.println("Learn your squares and cubes!");
 
 		// Ask for user information.
-		System.out.print("Please enter your name: ");
-		userInfo = scnr.nextLine();
+		userInfo = Validator.getString(scnr, "Please enter your name: ");
+		// Greet user.
 		System.out.println("Hello, " + userInfo + "!");
 
 		do {// Prompt user to enter an integer.
-			System.out.print("Please enter an integer: ");
-			userNum = scnr.nextInt();
-
+			userNum = Validator.getInt(scnr, "Please enter an integer between 1 and 20: ", 1, 20);
+			
 			// Create table.
 			displayTable();
 
@@ -34,9 +34,7 @@ public class TableOfPowers {
 
 			// Ask if the user wants to continue entering numbers.
 			System.out.println();
-			System.out.print(userInfo + ", would you like to continue (y/n)?");
-			playAgain = scnr.next();
-			scnr.nextLine();
+			playAgain = Validator.getString(scnr, userInfo + ", would you like to continue (y/n)?");
 
 		} while (playAgain.equalsIgnoreCase("y"));
 
